@@ -105,7 +105,7 @@ const HomeComponent = () => {
   const alumni = [
     {
       id: 1,
-      name: "Dr. Wanjiru Mwangi",
+      name: "Barack Omondi",
       graduationYear: 1995,
       profession: "Medical Doctor",
       achievement: "Chief of Surgery at Nairobi Hospital",
@@ -113,7 +113,7 @@ const HomeComponent = () => {
     },
     {
       id: 2,
-      name: "James Omondi",
+      name: "Derrick Were",
       graduationYear: 2005,
       profession: "Software Engineer",
       achievement: "Founder of TechSolutions Africa",
