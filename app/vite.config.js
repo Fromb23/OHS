@@ -5,10 +5,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    outDir: "dist"
+    outDir: "dist",
   },
   server: {
-    host: "0.0.0.0",
-    port: process.env.PORT || 5173
-  }
+    host: "0.0.0.0", // required so Render can access the dev server
+    port: process.env.PORT || 5173, // allow dynamic port
+    strictPort: true,
+    allowedHosts: ["ohs-1-z3o6.onrender.com"], // <- this is the fix
+  },
 });
