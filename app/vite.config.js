@@ -8,9 +8,10 @@ export default defineConfig({
     outDir: "dist",
   },
   server: {
-    host: "0.0.0.0", // required so Render can access the dev server
-    port: process.env.PORT || 5173, // allow dynamic port
+    host: "0.0.0.0",                   // expose to network
+    port: process.env.PORT || 5173,    // support Render's dynamic port
     strictPort: true,
-    allowedHosts: ["ohs-1-z3o6.onrender.com"], // <- this is the fix
+    origin: `https://${process.env.RENDER_EXTERNAL_HOSTNAME}`, // required for Vite >=5
+    allowedHosts: ["all"],             // 👈 this allows all hosts (useful for Render)
   },
 });
